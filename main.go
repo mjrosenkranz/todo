@@ -6,15 +6,13 @@ import (
 )
 
 func main() {
-	l := list.NewList("list one")
-	l2 := list.NewList("list bloop")
+	// only top level lists
+	lists := []*list.List{}
 
-	l2.AddTask(list.NewTask("beep"))
-	l2.AddTask(list.NewTask("bip"))
+	lists = append(lists, list.NewList("the first list"))
 
-	l.AddTask(list.NewTask("task1"))
-	l.AddTask(list.NewTask("task2"))
-	l.AddSublist(l2)
+	for _, l := range lists {
+		fmt.Print(l.Print())
+	}
 
-	fmt.Print(l.Print())
 }
