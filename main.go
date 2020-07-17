@@ -7,15 +7,14 @@ import (
 
 func main() {
 	l := list.NewList("list one")
-	l2 := list.NewList("list 2")
+	l2 := list.NewList("list bloop")
 
-	l2.AddItem(list.NewTask("task2"))
-	l2.AddItem(list.NewTask("task1"))
-	l2.AddItem(list.NewTask("task2"))
+	l2.AddTask(list.NewTask("beep"))
+	l2.AddTask(list.NewTask("bip"))
 
-	l.AddItem(list.NewTask("task1"))
-	l.AddItem(list.NewTask("task2"))
-	l.AddItem(l2)
+	l.AddTask(list.NewTask("task1"))
+	l.AddTask(list.NewTask("task2"))
+	l.AddSublist(l2)
 
 	fmt.Print(l.Print())
 }
